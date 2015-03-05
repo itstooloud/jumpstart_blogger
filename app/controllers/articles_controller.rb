@@ -12,6 +12,10 @@ class ArticlesController < ApplicationController
 	def show
 
 		@article = Article.find(params[:id])
+		
+		#create a blank comment instance while this page is showing
+		@comment = Comment.new
+		@comment.article_id = @article.id
 
 	end
 
